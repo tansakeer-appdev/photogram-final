@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # Routes for the Like resource:
 
+  #HOMEPAGE
+  get("/", { :controller => "user_authentication", :action => "index" })
+
   # CREATE
   post("/insert_like", { :controller => "likes", :action => "create" })
           
@@ -94,6 +97,7 @@ Rails.application.routes.draw do
 
   # SIGN IN FORM
   get("/user_sign_in", { :controller => "user_authentication", :action => "sign_in_form" })
+
   # AUTHENTICATE AND STORE COOKIE
   post("/user_verify_credentials", { :controller => "user_authentication", :action => "create_cookie" })
   
